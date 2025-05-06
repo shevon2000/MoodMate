@@ -1,0 +1,62 @@
+{% extends 'base.html' %}
+{% block title %}Dashboard{% endblock %}
+{% block content %}
+    <div class="text-center mb-4">
+        <h1>Welcome, {{ current_user.username }}!</h1>
+        <p>Your personal dashboard for mood tracking and task management.</p>
+    </div>
+    <div class="row mb-4">
+        <div class="col-md-4">
+            <div class="stat-card dashboard-card">
+                <h3 class="text-success">{{ recent_entries|length }}</h3>
+                <p>Recent Diary Entries</p>
+                <a href="{{ url_for('diary.add_entry') }}" class="btn btn-teal">Write Diary</a>
+            </div>
+        </div>
+        <div class="col-md-4">
+            <div class="stat-card dashboard-card">
+                <h3 class="text-warning">{{ pending_tasks|length }}</h3>
+                <p>Pending Tasks</p>
+                <a href="{{ url_for('tasks.add_task') }}" class="btn btn-teal">Add Task</a>
+            </div>
+        </div>
+        <div class="col-md-4">
+            <div class="stat-card dashboard-card">
+                <h3 class="text-danger">{{ overdue_tasks }}</h3>
+                <p>Overdue Tasks</p>
+                <a href="{{ url_for('tasks.all_tasks') }}" class="btn btn-teal">View Tasks</a>
+            </div>
+        </div>
+    </div>
+    <div class="card p-4">
+        <h2>Recent Activity</h2>
+        <h4>Diary Entries</h4>
+        {% if recent_entries %}
+            {% for entry in recent_entries %}
+                <div class="card mb-3">
+                    <div class="card-body">
+                        <h5 class="card-title">{{ entry.date }}</h5>
+                        <p class="card-text"><strong>Mood:</strong> {{ entry.mood }}</p>
+                        <a href="{{ url_for('diary.view_entry', id=entry.id) }}" class="btn btn-purple">View</a>
+                    </div>
+                </div>
+            {% endfor %}
+        {% else %}
+            <p>No recent entries.</p>
+        {% endif %}
+        <h4>Pending Tasks</h4>
+        {% if pending_tasks %}
+            {% for task in pending_tasks %}
+                <div class="card mb-3 {% if task.due_date < current_date and not task.completed %}bg-danger bg-opacity-10 border-danger{% endif %}">
+                    <div class="card-body">
+                        <h5 class="card-title">{{ task.title }}</h5>
+                        <p class="card-text"><strong>Due Date:</strong> {{ task.due_date }}</p>
+                        <a href="{{ url_for('tasks.complete_task', id=task.id) }}" class="btn btn-success">Mark as Completed</a>
+                    </div>
+                </div>
+            {% endfor %}
+        {% else %}
+            <p>No pending tasks.</p>
+        {% endif %}
+    </div>
+{% endblock %}

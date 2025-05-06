@@ -1,0 +1,82 @@
+# Python Virtual Environment
+venv/
+.env/
+env/
+.venv/
+
+# Python Bytecode and Cache
+__pycache__/
+*.pyc
+*.pyo
+*.pyd
+.Python
+*.egg-info/
+dist/
+build/
+*.egg
+
+# Flask-Specific
+instance/
+*.db  # SQLite database files (e.g., moodmate.db)
+*.sqlite
+*.sqlite3
+
+# Environment and Secrets
+.env
+*.env
+.env.local
+.env.development
+.env.production
+config.py  # If you store sensitive config separately
+*.key
+*.pem
+
+# Temporary Files
+*.log
+*.log.*
+*.tmp
+*.bak
+*.swp
+*~
+.DS_Store  # macOS
+Thumbs.db  # Windows
+
+# Dependency Directories
+pip-wheel-metadata/
+.cache/
+.pip_cache/
+.tox/
+
+# IDE and Editor Files
+.vscode/
+.idea/
+*.sublime-project
+*.sublime-workspace
+
+# Testing and Coverage
+.coverage
+coverage.xml
+*.cover
+htmlcov/
+pytest_cache/
+.junit.xml
+
+# Render/Deployment Files
+*.pid
+gunicorn.sock
+Procfile.dev
+
+# Local Development
+*.local
+*.pid
+*.sock
+
+# Downloaded Diary Entries
+diary_entries/*.txt  # User-downloaded diary files
+
+# Miscellaneous
+*.bak
+*.swp
+*.swo
+node_modules/  # In case you add frontend dependencies
+dist/  # Frontend build output

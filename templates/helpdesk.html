@@ -1,0 +1,757 @@
+{% extends 'base.html' %}
+{% block title %}Help Desk{% endblock %}
+{% block content %}
+    <div class="container">
+        <div class="jumbotron bg-light p-4 my-4 rounded shadow-shade">
+            <h1 class="display-4 text-primary">❤️MoodMate Help Desk</h1>
+            <p class="lead">Support for managing mood fluctuations, temper issues, and emotional wellness</p>
+            <hr class="my-4">
+            <p>Everyone experiences mood changes and emotional challenges. With the right strategies and support, these experiences can be managed effectively.</p>
+        </div>
+        
+        <!-- Quick Navigation (Sticky) -->
+        <div class="card mb-4 shadow-sm sticky-top" style="top: 20px; z-index: 1000;">
+            <div class="card-header bg-navy text-white">
+                <h3>Quick Navigation</h3>
+            </div>
+            <div class="card-body">
+                <div class="row">
+                    <div class="col-md-3 mb-2">
+                        <a href="#mood-disorders" class="btn btn-outline-primary w-100">Mood Disorders</a>
+                    </div>
+                    <div class="col-md-3 mb-2">
+                        <a href="#anger-management" class="btn btn-outline-primary w-100">Anger Management</a>
+                    </div>
+                    <div class="col-md-3 mb-2">
+                        <a href="#anxiety-stress" class="btn btn-outline-primary w-100">Anxiety & Stress</a>
+                    </div>
+                    <div class="col-md-3 mb-2">
+                        <a href="#self-help" class="btn btn-outline-primary w-100">Self-Help Tools</a>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <!-- Understanding Section -->
+        <div id="mood-disorders" class="card mb-4 shadow-sm">
+            <div class="card-header bg-info text-white">
+                <h3>Understanding Mood Fluctuations</h3>
+            </div>
+            <div class="card-body">
+                <p>Mood fluctuations are a normal part of human experience. However, when these changes become intense, persistent, or disruptive to daily life, they may indicate a mood disorder.</p>
+                
+                <div class="accordion" id="moodAccordion">
+                    <div class="accordion-item">
+                        <h2 class="accordion-header" id="headingOne">
+                            <button 
+                                class="accordion-button" 
+                                type="button" 
+                                data-bs-toggle="collapse" 
+                                data-bs-target="#collapseOne" 
+                                aria-expanded="true" 
+                                aria-controls="collapseOne"
+                            >
+                                Common Mood Variations
+                            </button>
+                        </h2>
+                        <div 
+                            id="collapseOne" 
+                            class="accordion-collapse collapse show" 
+                            aria-labelledby="headingOne" 
+                            data-bs-parent="#moodAccordion"
+                        >
+                            <div class="accordion-body">
+                                <ul>
+                                    <li><strong>Temporary sadness or low mood</strong> - Often triggered by life events and typically resolves within days or weeks</li>
+                                    <li><strong>Occasional irritability</strong> - Brief periods of being easily annoyed or impatient</li>
+                                    <li><strong>Periodic anxiety</strong> - Natural response to stressful situations</li>
+                                    <li><strong>Mood swings</strong> - Normal fluctuations in emotional state, particularly during hormonal changes</li>
+                                </ul>
+                                <div class="alert alert-success">
+                                    <i class="fas fa-lightbulb"></i> <strong>Remember:</strong> These experiences are common and don't necessarily indicate a disorder. With good habits and self-care, most people can manage these effectively.
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="accordion-item">
+                        <h2 class="accordion-header" id="headingTwo">
+                            <button 
+                                class="accordion-button collapsed" 
+                                type="button" 
+                                data-bs-toggle="collapse" 
+                                data-bs-target="#collapseTwo" 
+                                aria-expanded="false" 
+                                aria-controls="collapseTwo"
+                            >
+                                When Mood Changes May Need Attention
+                            </button>
+                        </h2>
+                        <div 
+                            id="collapseTwo" 
+                            class="accordion-collapse collapse" 
+                            aria-labelledby="headingTwo" 
+                            data-bs-parent="#moodAccordion"
+                        >
+                            <div class="accordion-body">
+                                <p>While most mood fluctuations are normal, some patterns may benefit from additional support:</p>
+                                <ul>
+                                    <li>Persistent sadness lasting more than two weeks</li>
+                                    <li>Extreme shifts between high energy and low mood</li>
+                                    <li>Seasonal patterns of mood changes</li>
+                                    <li>Mood changes that interfere with work, relationships, or daily activities</li>
+                                </ul>
+                                <div class="alert alert-info">
+                                    <i class="fas fa-info-circle"></i> Early intervention often leads to better outcomes. The strategies on this page can help manage milder symptoms.
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <!-- Anger Management Section -->
+        <div id="anger-management" class="card mb-4 shadow-sm">
+            <div class="card-header bg-warning text-dark">
+                <h3>Managing Rapid Temper & Irritability</h3>
+            </div>
+            <div class="card-body">
+                <div class="row">
+                    <div class="col-md-6">
+                        <h4 class="text-warning"><i class="fas fa-fire-alt"></i> Understanding Anger Responses</h4>
+                        <p>Experiencing anger is normal, but frequent intense reactions can strain relationships and affect wellbeing. The good news is that emotional regulation can be learned and improved with practice.</p>
+                        <p>Most people with quick tempers can significantly improve their responses through dedicated practice of calming techniques and trigger awareness.</p>
+                    </div>
+                    <div class="col-md-6">
+                        <div class="card h-100 bg-light">
+                            <div class="card-body">
+                                <h5>Signs of Anger Management Challenges</h5>
+                                <ul>
+                                    <li>Reacting disproportionately to minor frustrations</li>
+                                    <li>Feeling regret after angry outbursts</li>
+                                    <li>Physical tension during anger episodes</li>
+                                    <li>Difficulty letting go of irritations</li>
+                                    <li>Others commenting on your temper</li>
+                                </ul>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                
+                <h4 class="mt-4 text-warning">Effective Strategies for Temper Management</h4>
+                <div class="row mt-3">
+                    <div class="col-md-4 mb-3">
+                        <div class="card h-100">
+                            <div class="card-header bg-light">
+                                <h5>Immediate Response Techniques</h5>
+                            </div>
+                            <div class="card-body">
+                                <ul>
+                                    <li><strong>5-5-5 Breathing:</strong> Breathe in for 5 seconds, hold for 5, release for 5</li>
+                                    <li><strong>Time-out:</strong> Step away temporarily when feeling overwhelmed</li>
+                                    <li><strong>Physical redirection:</strong> Channel energy into a brief walk or stretching</li>
+                                    <li><strong>Counting:</strong> Count slowly to 10 before responding</li>
+                                </ul>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-md-4 mb-3">
+                        <div class="card h-100">
+                            <div class="card-header bg-light">
+                                <h5>Prevention Practices</h5>
+                            </div>
+                            <div class="card-body">
+                                <ul>
+                                    <li><strong>Trigger identification:</strong> Keep a journal to identify anger patterns</li>
+                                    <li><strong>Perspective practice:</strong> Regularly consider alternative viewpoints</li>
+                                    <li><strong>Relaxation routine:</strong> Daily progressive muscle relaxation</li>
+                                    <li><strong>Sleep hygiene:</strong> Ensure adequate rest to prevent irritability</li>
+                                </ul>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-md-4 mb-3">
+                        <div class="card h-100">
+                            <div class="card-header bg-light">
+                                <h5>Long-term Habits</h5>
+                            </div>
+                            <div class="card-body">
+                                <ul>
+                                    <li><strong>Regular exercise:</strong> 30 minutes of moderate activity daily</li>
+                                    <li><strong>Mindfulness practice:</strong> 10 minutes daily meditation</li>
+                                    <li><strong>Communication skills:</strong> Practice "I" statements</li>
+                                    <li><strong>Stress management routine:</strong> Incorporate daily relaxation</li>
+                                </ul>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                
+                <div class="alert alert-warning mt-3">
+                    <i class="fas fa-exclamation-triangle"></i> <strong>Progress, Not Perfection:</strong> Improvement in emotional regulation takes time. Celebrate small victories and be patient with setbacks.
+                </div>
+            </div>
+        </div>
+
+        <!-- Anxiety & Stress Section -->
+        <div id="anxiety-stress" class="card mb-4 shadow-sm">
+            <div class="card-header bg-success text-white">
+                <h3>Managing Anxiety & Stress</h3>
+            </div>
+            <div class="card-body">
+                <p>Everyone experiences anxiety and stress. These are natural responses that can sometimes become overwhelming. With consistent practice of effective techniques, most people can significantly reduce their impact.</p>
+                <div class="container mt-3">
+                    <h4 class="text-success">Physical & Mental Strategies</h4>
+                
+                    <!-- Row 1: Breathwork + Thought Challenging -->
+                    <div class="row mb-3">
+                        <div class="col-md-6">
+                            <div class="card h-100">
+                                <div class="card-body d-flex flex-column">
+                                    <h5>Breathwork Techniques</h5>
+                                    <p><strong>Box Breathing:</strong> Inhale (4 counts), hold (4), exhale (4), hold (4). Repeat for 5 minutes.</p>
+                                    <p><strong>Effectiveness:</strong> Regular practice can reduce physical symptoms of anxiety by activating the parasympathetic nervous system.</p>
+                                    <div class="text-center mt-auto">
+                                        <img src="{{ url_for('static', filename='images/box_breathing.png') }}" alt="Box breathing diagram" class="img-fluid rounded" style="max-width: 220px;">
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                
+                        <div class="col-md-6">
+                            <div class="card h-100">
+                                <div class="card-body d-flex flex-column">
+                                    <h5>Thought Challenging Exercise</h5>
+                                    <ol>
+                                        <li>Identify anxious thoughts</li>
+                                        <li>Rate belief (0-100%)</li>
+                                        <li>Identify evidence for and against</li>
+                                        <li>Create balanced alternative thought</li>
+                                        <li>Re-rate original belief</li>
+                                    </ol>
+                                    <p class="mt-auto"><strong>Practice:</strong> Use a thought record daily to build this habit.</p>
+                                    <div class="text-center mt-3">
+                                        <img src="{{ url_for('static', filename='images/strategies.png') }}" alt="Thought record diagram" class="img-fluid rounded" style="max-width: 150px;">
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                
+                    <!-- Row 2: Muscle Relaxation + Worry Management -->
+                    <div class="row mb-5">
+                        <div class="col-md-6">
+                            <div class="card h-100">
+                                <div class="card-body">
+                                    <h5>Progressive Muscle Relaxation</h5>
+                                    <ol>
+                                        <li>Tense a specific muscle group (5 seconds)</li>
+                                        <li>Release and relax (30 seconds)</li>
+                                        <li>Progress from feet to head</li>
+                                        <li>Practice daily for 10-15 minutes</li>
+                                    </ol>
+                                    <p><strong>Benefit:</strong> Helps recognize and reduce physical tension that accompanies stress.</p>
+                                </div>
+                            </div>
+                        </div>
+                
+                        <div class="col-md-6">
+                            <div class="card h-100">
+                                <div class="card-body">
+                                    <h5>Worry Management</h5>
+                                    <ul>
+                                        <li><strong>Scheduled worry time:</strong> Set aside 15–20 minutes daily to address concerns</li>
+                                        <li><strong>Worry postponement:</strong> Note worries as they arise and address them during scheduled time</li>
+                                        <li><strong>Problem-solving:</strong> For practical worries, identify specific actions</li>
+                                        <li><strong>Acceptance practices:</strong> For uncertainties beyond control</li>
+                                    </ul>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>            
+                
+                <div class="card mt-4">
+                    <div class="card-header bg-light">
+                        <h4>Daily Habits That Reduce Anxiety</h4>
+                    </div>
+                    <div class="card-body">
+                        <div class="row">
+                            <div class="col-md-4">
+                                <div class="d-flex align-items-center mb-3">
+                                    <div class="me-3">
+                                        <span class="badge rounded-pill bg-success p-2">
+                                            <i class="fas fa-bed fa-lg"></i>
+                                        </span>
+                                    </div>
+                                    <div>
+                                        <h5 class="mb-1">Sleep Hygiene</h5>
+                                        <p class="mb-0">7-9 hours nightly, consistent schedule</p>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="col-md-4">
+                                <div class="d-flex align-items-center mb-3">
+                                    <div class="me-3">
+                                        <span class="badge rounded-pill bg-success p-2">
+                                            <i class="fas fa-running fa-lg"></i>
+                                        </span>
+                                    </div>
+                                    <div>
+                                        <h5 class="mb-1">Physical Activity</h5>
+                                        <p class="mb-0">30 minutes daily, moderate intensity</p>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="col-md-4">
+                                <div class="d-flex align-items-center mb-3">
+                                    <div class="me-3">
+                                        <span class="badge rounded-pill bg-success p-2">
+                                            <i class="fas fa-coffee fa-lg"></i>
+                                        </span>
+                                    </div>
+                                    <div>
+                                        <h5 class="mb-1">Limit Stimulants</h5>
+                                        <p class="mb-0">Reduce caffeine, especially after noon</p>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="col-md-4">
+                                <div class="d-flex align-items-center mb-3">
+                                    <div class="me-3">
+                                        <span class="badge rounded-pill bg-success p-2">
+                                            <i class="fas fa-heart fa-lg"></i>
+                                        </span>
+                                    </div>
+                                    <div>
+                                        <h5 class="mb-1">Social Connection</h5>
+                                        <p class="mb-0">Regular meaningful interaction</p>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="col-md-4">
+                                <div class="d-flex align-items-center mb-3">
+                                    <div class="me-3">
+                                        <span class="badge rounded-pill bg-success p-2">
+                                            <i class="fas fa-apple-alt fa-lg"></i>
+                                        </span>
+                                    </div>
+                                    <div>
+                                        <h5 class="mb-1">Balanced Nutrition</h5>
+                                        <p class="mb-0">Regular meals, limit sugar and alcohol</p>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="col-md-4">
+                                <div class="d-flex align-items-center mb-3">
+                                    <div class="me-3">
+                                        <span class="badge rounded-pill bg-success p-2">
+                                            <i class="fas fa-sun fa-lg"></i>
+                                        </span>
+                                    </div>
+                                    <div>
+                                        <h5 class="mb-1">Nature Exposure</h5>
+                                        <p class="mb-0">20+ minutes outdoors daily</p>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <!-- Self-Help Tools Section -->
+        <div id="self-help" class="card mb-4 shadow-sm">
+            <div class="card-header bg-primary text-white">
+                <h3>Self-Help Tools & Practices</h3>
+            </div>
+            <div class="card-body">
+                <div class="row">
+                    <div class="col-lg-4 mb-4">
+                        <div class="card h-100">
+                            <div class="card-header bg-light">
+                                <h4>🧘‍♂️ Mindfulness Practices</h4>
+                            </div>
+                            <div class="card-body">
+                                <p>Regular mindfulness practice can improve emotional regulation and reduce reactivity.</p>
+                                <h5>5-Minute Daily Practice</h5>
+                                <ol>
+                                    <li>Find a comfortable seated position</li>
+                                    <li>Focus attention on your breath</li>
+                                    <li>When mind wanders, gently return focus</li>
+                                    <li>Start with 5 minutes, gradually increase</li>
+                                </ol>
+                                <p class="text-primary"><strong>Consistency Tip:</strong> Link practice to an existing daily habit (like morning coffee).</p>
+                            </div>
+                            <div class="card-footer bg-light">
+                                <p class="mb-0"><strong>Recommended frequency:</strong> Daily, ideally same time</p>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-lg-4 mb-4">
+                        <div class="card h-100">
+                            <div class="card-header bg-light">
+                                <h4>📊 Mood Tracking</h4>
+                            </div>
+                            <div class="card-body">
+                                <p>Regular tracking helps identify patterns and triggers that affect your emotional state.</p>
+                                <h5>Simple Daily Log</h5>
+                                <ul>
+                                    <li>Rate mood (1-10) 2-3 times daily</li>
+                                    <li>Note activities, sleep, and nutrition</li>
+                                    <li>Identify potential triggers</li>
+                                    <li>Review weekly to spot patterns</li>
+                                </ul>
+                                <p class="text-primary"><strong>Action Step:</strong> Use notebook or digital app consistently.</p>
+                            </div>
+                            <div class="card-footer bg-light">
+                                <p class="mb-4"><strong>Recommended frequency:</strong> 2-3 times daily</p>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-lg-4 mb-4">
+                        <div class="card h-100">
+                            <div class="card-header bg-light">
+                                <h4>🧠 Cognitive Restructuring</h4>
+                            </div>
+                            <div class="card-body">
+                                <p>Learn to identify and challenge unhelpful thought patterns that contribute to negative moods.</p>
+                                <h5>Common Thought Distortions</h5>
+                                <ul>
+                                    <li><strong>All-or-nothing thinking:</strong> "If I'm not perfect, I'm a failure"</li>
+                                    <li><strong>Catastrophizing:</strong> "This will be a complete disaster"</li>
+                                    <li><strong>Mind reading:</strong> "They must think I'm incompetent"</li>
+                                    <li><strong>Overgeneralizing:</strong> "I always mess things up"</li>
+                                </ul>
+                                <p class="text-primary"><strong>Practice Exercise:</strong> Challenge one negative thought daily.</p>
+                            </div>
+                            <div class="card-footer bg-light">
+                                <p class="mb-0"><strong>Recommended frequency:</strong> Daily practice with challenging thoughts</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                
+                <div class="card mt-4">
+                    <div class="card-header bg-light">
+                        <h4>Creating a Personalized Wellness Plan <i class="fas fa-lightbulb nav-icon"></i></h4>
+                    </div>
+                    <div class="card-body">
+                        <p>Combining strategies into a personalized routine enhances effectiveness. Consider these steps:</p>
+                        <div class="row">
+                            <div class="col-md-6">
+                                <h5>1. Assess Current Needs</h5>
+                                <ul>
+                                    <li>Identify primary emotional challenges</li>
+                                    <li>Consider which areas need most attention</li>
+                                    <li>Review past successful coping strategies</li>
+                                </ul>
+                                
+                                <h5>2. Start Small</h5>
+                                <ul>
+                                    <li>Choose 2-3 strategies to begin with</li>
+                                    <li>Set specific, measurable goals</li>
+                                    <li>Schedule activities in calendar</li>
+                                </ul>
+                            </div>
+                            <div class="col-md-6">
+                                <h5>3. Monitor Progress</h5>
+                                <ul>
+                                    <li>Keep a simple log of activities completed</li>
+                                    <li>Note improvements in mood and functioning</li>
+                                    <li>Adjust plan based on what works best</li>
+                                </ul>
+                                
+                                <h5>4. Build Consistency</h5>
+                                <ul>
+                                    <li>Gradually increase duration/frequency</li>
+                                    <li>Link new habits to existing routines</li>
+                                    <li>Celebrate small wins and improvements</li>
+                                </ul>
+                            </div>
+                        </div>
+                        
+                        <div class="alert alert-primary mt-3">
+                            <i class="fas fa-clipboard-check"></i> <strong>Remember:</strong> Small, consistent actions often lead to more sustainable improvements than dramatic temporary changes.
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <!-- When to Seek Help Section -->
+        <div class="card mb-4 shadow-sm">
+            <div class="card-header bg-danger text-white">
+                <h3>When to Seek Professional Support</h3>
+            </div>
+            <div class="card-body">
+                <p>While many mood and temperament challenges can be managed with self-help strategies, sometimes professional support is beneficial:</p>
+                
+                <div class="row mt-3">
+                    <div class="col-md-6">
+                        <div class="card mb-3">
+                            <div class="card-header bg-light">
+                                <h4>Signs Professional Help May Be Needed</h4>
+                            </div>
+                            <div class="card-body">
+                                <ul>
+                                    <li>Mood or behavior changes that persist for 2+ weeks</li>
+                                    <li>Difficulty functioning at work, school, or in relationships</li>
+                                    <li>Using substances to manage emotions</li>
+                                    <li>Thoughts of harming yourself or others</li>
+                                    <li>Sleep or appetite significantly affected</li>
+                                    <li>Self-help strategies not providing relief</li>
+                                </ul>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-md-6">
+                        <div class="card mb-3">
+                            <div class="card-header bg-light">
+                                <h4>Benefits of Professional Support</h4>
+                            </div>
+                            <div class="card-body">
+                                <ul>
+                                    <li>Personalized assessment and treatment plan</li>
+                                    <li>Evidence-based therapeutic approaches</li>
+                                    <li>Objective perspective on challenges</li>
+                                    <li>Skill development with expert guidance</li>
+                                    <li>Support during difficult transitions</li>
+                                    <li>Accountability and structured progress</li>
+                                </ul>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                
+                <div class="alert alert-danger">
+                    <i class="fas fa-exclamation-circle"></i> <strong>Important:</strong> If you're experiencing thoughts of suicide or self-harm, please seek immediate help through emergency services, crisis hotlines, or your nearest emergency room.
+                </div>
+            </div>
+        </div>
+
+        <!-- Crisis Resources Section -->
+        <div class="card mb-4 shadow-sm">
+            <div class="card-header bg-dark text-white">
+                <h3>Crisis Resources</h3>
+            </div>
+            <div class="card-body">
+                <div class="row">
+                    <div class="col-md-4 mb-3">
+                        <div class="card h-100 border-danger">
+                            <div class="card-header bg-danger text-white">
+                                <h4>Immediate Help (Sri Lanka)</h4>
+                            </div>
+                            <div class="card-body">
+                                <ul class="list-unstyled">
+                                    <li class="mb-3">
+                                        <strong>Sri Lanka Suicide Prevention Helpline</strong><br>
+                                        Call 1987<br>
+                                        (Available 24/7)
+                                    </li>
+                                    <li class="mb-3">
+                                        <strong>Crisis Text Line</strong><br>
+                                        Text "HELLO" to 1917<br>
+                                        (Available 24/7)
+                                    </li>
+                                    <li>
+                                        <strong>Emergency Services</strong><br>
+                                        Call 119 for immediate danger
+                                    </li>
+                                </ul>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-md-4 mb-3">
+                        <div class="card h-100">
+                            <div class="card-header bg-secondary text-white">
+                                <h4>International Resources</h4>
+                            </div>
+                            <div class="card-body">
+                                <ul class="list-unstyled">
+                                    <li class="mb-3">
+                                        <strong>International Association for Suicide Prevention</strong><br>
+                                        <a href="https://www.iasp.info/resources/Crisis_Centres/" target="_blank">Find a Crisis Center</a>
+                                    </li>
+                                    <li class="mb-3">
+                                        <strong>Befrienders Worldwide</strong><br>
+                                        <a href="https://www.befrienders.org" target="_blank">International Helplines</a>
+                                    </li>
+                                    <li>
+                                        <strong>Mental Health Europe</strong><br>
+                                        <a href="https://www.mhe-sme.org" target="_blank">Resources by Country</a>
+                                    </li>
+                                </ul>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-md-4 mb-3">
+                        <div class="card h-100">
+                            <div class="card-header bg-secondary text-white">
+                                <h4>Finding Professional Support</h4>
+                            </div>
+                            <div class="card-body">
+                                <ul class="list-unstyled">
+                                    <li class="mb-3">
+                                        <strong>Psychology Today Therapist Finder</strong><br>
+                                        <a href="https://www.psychologytoday.com/us/therapists" target="_blank">Search Directory</a>
+                                    </li>
+                                    <li class="mb-3">
+                                        <strong>Community Mental Health Centers</strong><br>
+                                        Low-cost local options
+                                    </li>
+                                    <li>
+                                        <strong>Primary Care Provider</strong><br>
+                                        Ask for mental health referrals
+                                    </li>
+                                </ul>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <!-- Additional Resources -->
+        <div class="card mb-4 shadow-sm">
+            <div class="card-header bg-info text-white">
+                <h3>Additional Resources</h3>
+            </div>
+            <div class="card-body">
+                <div class="row">
+                    <div class="col-md-4 mb-3">
+                        <div class="card h-100">
+                            <div class="card-header bg-light">
+                                <h5>📚 Books</h5>
+                            </div>
+                            <div class="card-body">
+                                <ul>
+                                    <li>"The Upward Spiral" by Alex Korb</li>
+                                    <li>"Mind Over Mood" by Dennis Greenberger & Christine Padesky</li>
+                                    <li>"The Anxiety and Phobia Workbook" by Edmund J. Bourne</li>
+                                    <li>"The Anger Control Workbook" by Matthew McKay</li>
+                                </ul>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-md-4 mb-3">
+                        <div class="card h-100">
+                            <div class="card-header bg-light">
+                                <h5>📱 Apps</h5>
+                            </div>
+                            <div class="card-body">
+                                <ul>
+                                    <li><strong>Calm</strong> - Meditation and sleep stories</li>
+                                    <li><strong>Headspace</strong> - Guided meditation</li>
+                                    <li><strong>Wysa</strong> - AI-based mental health support</li>
+                                    <li><strong>MoodKit</strong> - CBT-based mood improvement</li>
+                                    <li><strong>Daylio</strong> - Mood tracking</li>
+                                </ul>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-md-4 mb-3">
+                        <div class="card h-100">
+                            <div class="card-header bg-light">
+                                <h5>🌐 Online Communities</h5>
+                            </div>
+                            <div class="card-body">
+                                <ul>
+                                    <li><strong>7 Cups</strong> - Free emotional support</li>
+                                    <li><strong>Mental Health America</strong> - Support groups</li>
+                                    <li><strong>Reddit Communities</strong> - r/anxiety, r/depression</li>
+                                    <li><strong>National Alliance on Mental Illness</strong> - Resources</li>
+                                    <li><strong>The Mighty</strong> - Community for mental health support</li>
+                                </ul>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                
+                <!-- Additional Tools and Support -->
+                <div class="row">
+                    <div class="col-md-4 mb-3">
+                        <div class="card h-100">
+                            <div class="card-header bg-light">
+                                <h5>🎧 Podcasts</h5>
+                            </div>
+                            <div class="card-body">
+                                <ul>
+                                    <li>"The Happiness Lab" by Dr. Laurie Santos</li>
+                                    <li>"Therapy Chat" by Laura Reagan</li>
+                                    <li>"The Anxiety Coaches Podcast" by Gina Ryan</li>
+                                    <li>"Mental Illness Happy Hour" by Paul Gilmartin</li>
+                                </ul>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-md-4 mb-3">
+                        <div class="card h-100">
+                            <div class="card-header bg-light">
+                                <h5>💻 Online Courses</h5>
+                            </div>
+                            <div class="card-body">
+                                <ul>
+                                    <li><strong>Coursera</strong> - "The Science of Well-Being" by Yale University</li>
+                                    <li><strong>Udemy</strong> - "CBT for Anxiety and Depression"</li>
+                                    <li><strong>FutureLearn</strong> - "Understanding Anxiety, Depression and CBT"</li>
+                                    <li><strong>edX</strong> - "Managing Stress and Mental Health"</li>
+                                </ul>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-md-4 mb-3">
+                        <div class="card h-100">
+                            <div class="card-header bg-light">
+                                <h5>📝 Worksheets & Printables</h5>
+                            </div>
+                            <div class="card-body">
+                                <ul>
+                                    <li><strong>Therapist Aid</strong> - Free CBT worksheets</li>
+                                    <li><strong>Get Self Help</strong> - Mood tracking templates</li>
+                                    <li><strong>Positive Psychology</strong> - Gratitude journal prompts</li>
+                                    <li><strong>Mind Remake Project</strong> - Anger management tools</li>
+                                </ul>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <!-- Closing Section -->
+        <div class="card mb-4 shadow-sm">
+            <div class="card-header bg-primary text-white">
+                <h3>Take the Next Step</h3>
+            </div>
+            <div class="card-body">
+                <p>Your emotional wellness journey is unique, and every step forward counts. Whether you're starting with small self-help practices or seeking professional support, MoodMate is here to guide you.</p>
+                <div class="row">
+                    <div class="col-md-6 mb-3">
+                        <div class="card h-100">
+                            <div class="card-body text-center">
+                                <h4 class="text-primary">Start Today</h4>
+                                <p>Choose one strategy from this page and commit to practicing it for a week. Track your progress and notice the difference.</p>
+                                <a href="#self-help" class="btn btn-primary">Explore Self-Help Tools</a>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-md-6 mb-3">
+                        <div class="card h-100">
+                            <div class="card-body text-center">
+                                <h4 class="text-primary">Connect With Support</h4>
+                                <p>Reach out to a trusted friend, join an online community, or contact a professional to share your journey.</p>
+                                <a href="#crisis-resources" class="btn btn-primary">Find Resources</a>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="alert alert-success mt-3">
+                    <i class="fas fa-heart"></i> <strong>You Are Not Alone:</strong> Millions of people work on their emotional wellness every day. Small, consistent steps can lead to meaningful change.
+                </div>
+            </div>
+        </div>
+
+    </div> <!-- Closing container div -->
+{% endblock %}

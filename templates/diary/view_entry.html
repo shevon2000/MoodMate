@@ -1,0 +1,18 @@
+{% extends 'base.html' %}
+{% block title %}View Entry{% endblock %}
+{% block content %}
+    <div class="card p-4">
+        <h2>Diary Entry</h2>
+        <p><strong>Date:</strong> {{ entry.date }}</p>
+        <p><strong>Mood:</strong> {{ entry.mood }}</p>
+        <p><strong>Sentiment:</strong> {{ entry.sentiment }}</p>
+        <p><strong>Content:</strong></p>
+        <p>{{ entry.content }}</p>
+        <a href="{{ url_for('diary.download_entry', id=entry.id) }}" class="btn btn-secondary">
+            Download
+        </a>
+        <a href="{{ url_for('diary.all_entries') }}" class="btn btn-primary">
+            Back to Entries
+        </a>
+    </div>
+{% endblock %}

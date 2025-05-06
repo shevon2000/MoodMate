@@ -1,0 +1,97 @@
+{% extends 'base.html' %}
+{% block title %}Add Diary Entry{% endblock %}
+{% block content %}
+    <div class="card p-4">
+        <h2>Add Diary Entry</h2>
+        <form method="POST">
+            <div class="mb-3">
+                <label for="date" class="form-label">Date and Time</label>
+                <input type="datetime-local" class="form-control" id="date" name="date" required>
+            </div>
+            <div class="mb-3">
+                <label for="content" class="form-label">Diary Entry</label>
+                <textarea class="form-control" id="content" name="content" rows="5" required></textarea>
+                <div class="mt-2">
+                    <label class="form-label">Or use voice input</label>
+                    <div class="d-flex align-items-center">
+                        <button type="button" class="btn btn-danger me-2" id="recordBtn">
+                            🎙️ Start Recording
+                        </button>
+                        <span id="recordStatus" class="text-muted">Not recording</span>
+                    </div>
+                    <small class="text-muted d-block mt-1">
+                        Click to record your voice and convert it to text.
+                    </small>
+                </div>
+            </div>
+            <div class="mb-3">
+                <label for="mood" class="form-label">Mood</label>
+                <select class="form-control" id="mood" name="mood" required>
+                    <option value="Happy">Happy</option>
+                    <option value="Neutral">Neutral</option>
+                    <option value="Sad">Sad</option>
+                </select>
+            </div>
+            <div class="d-flex justify-content-between">
+                <button type="submit" class="btn btn-teal">Save Entry</button>
+                <a href="{{ url_for('diary.all_entries') }}" class="btn btn-outline-success">
+                    All Diaries
+                </a>
+            </div>
+        </form>
+    </div>
+{% endblock %}
+{% block scripts %}
+<script>
+    let mediaRecorder;
+    let audioChunks = [];
+
+    document.getElementById('recordBtn').addEventListener('click', async () => {
+        const recordBtn = document.getElementById('recordBtn');
+        const recordStatus = document.getElementById('recordStatus');
+
+        if (!mediaRecorder || mediaRecorder.state === "inactive") {
+            // Request microphone access
+            const stream = await navigator.mediaDevices.getUserMedia({ audio: true });
+            mediaRecorder = new MediaRecorder(stream);
+
+            mediaRecorder.onstart = () => {
+                audioChunks = [];
+                recordStatus.textContent = "Recording...";
+                recordBtn.textContent = "⏹️ Stop Recording";
+            };
+
+            mediaRecorder.ondataavailable = event => {
+                audioChunks.push(event.data);
+            };
+
+            mediaRecorder.onstop = async () => {
+                recordStatus.textContent = "Transcribing...";
+                recordBtn.textContent = "🎙️ Start Recording";
+
+                const blob = new Blob(audioChunks, { type: 'audio/webm' });
+                const formData = new FormData();
+                formData.append('audio', blob, 'recording.webm');
+
+                const response = await fetch("{{ url_for('diary.transcribe') }}", {
+                    method: "POST",
+                    body: formData
+                });
+
+                const data = await response.json();
+                if (data.text) {
+                    document.getElementById('content').value = data.text;
+                    recordStatus.textContent = "Transcription complete!";
+                } else {
+                    recordStatus.textContent = "Transcription failed.";
+                    alert(data.error || "Error occurred");
+                }
+            };
+
+            mediaRecorder.start();
+        } else {
+            mediaRecorder.stop();
+        }
+    });
+</script>
+{% endblock %}

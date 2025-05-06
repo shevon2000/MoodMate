@@ -1,0 +1,224 @@
+{% extends 'base.html' %}
+{% block title %}Welcome{% endblock %}
+{% block content %}
+    <div class="row align-items-center py-5">
+        <div class="col-md-6">
+            <h1 class="display-4 fw-bold">Track Your Mood, Manage Tasks, Speak Your Mind</h1>
+            <p class="lead">Smart Diary helps you monitor your emotional well-being, stay on top of your tasks, and journal effortlessly — all in one place.</p>
+            <p>Designed for individuals who want to understand emotional patterns, improve mental health awareness, and manage daily life more efficiently using voice-powered entries for both journaling and tasks.</p>
+
+            <div class="mt-4">
+                {% if current_user.is_authenticated %}
+                    <a href="{{ url_for('dashboard') }}" class="btn btn-teal btn-lg">Go to Dashboard</a>
+                {% else %}
+                    <a href="{{ url_for('auth.signup') }}" class="btn btn-teal btn-lg me-2">Get Started</a>
+                    <a href="{{ url_for('auth.login') }}" class="btn btn-outline-success btn-lg">Login</a>
+                {% endif %}
+            </div>
+        </div>
+        <div class="col-md-6 text-center">
+            <img 
+                src="{{ url_for('static', filename='images/mood.png') }}" 
+                alt="Mood Tracking" 
+                class="img-fluid rounded shadow"
+            >
+        </div>
+    </div>
+
+    <div class="custom-separator"><hr class="fade-line"></div>
+
+    <!-- Section 1: Why We’re Here -->
+    <section class="story-block">
+        <div class="row align-items-center">
+            <div class="col-md-6 text-section">
+                <div class="story-card shadow-sm">
+                    <div class="card-icon bg-primary text-white"><i class="fas fa-hand-holding-heart"></i></div>
+                    <h3 class="card-title">Why We’re Here</h3>
+                    <p class="card-subtext">We created MoodMate because emotions often go untracked, misunderstood, or ignored — especially in fast-paced lives.</p>
+                    <p class="card-body-text">Mood disorders, emotional instability, or sudden anger aren’t always visible, but they’re real. This is more than an app — it’s a space to understand yourself better and track progress through your journey.</p>
+                </div>
+            </div>
+            <div class="col-md-6 text-center">
+                <img 
+                    src="{{ url_for('static', filename='images/why_moodmate.png') }}" 
+                    alt="Why MoodMate" 
+                    class="img-fluid rounded shadow-lg story-image"
+                >
+            </div>
+        </div>
+    </section>
+
+    <div class="custom-separator"><hr class="fade-line"></div>
+
+    <!-- Section 2: Are You Someone Like This? -->
+    <section class="story-block">
+        <div class="row align-items-center flex-md-row-reverse">
+            <div class="col-md-6 text-section">
+                <div class="story-card shadow-sm">
+                    <div class="card-icon bg-warning text-white"><i class="fas fa-lightbulb"></i>
+                    </div>
+                    <h3 class="card-title">Are You Someone Like This?</h3>
+                    <ul class="checklist">
+                        <li>Sudden mood shifts or emotional spikes?</li>
+                        <li>Hard to communicate how you feel?</li>
+                        <li>Unable to explain your behavior to loved ones?</li>
+                        <li>Therapy helps, but progress feels blurry?</li>
+                    </ul>
+                    <p class="card-body-text">You’re not alone. These experiences are more common than you think — and they’re valid.</p>
+                </div>
+            </div>
+            <div class="col-md-6 text-center">
+                <img 
+                    src="{{ url_for('static', filename='images/struggling.png') }}" 
+                    alt="Struggling Emotionally" 
+                    class="img-fluid rounded shadow-lg story-image"
+                >
+            </div>
+        </div>
+    </section>
+
+    <div class="custom-separator"><hr class="fade-line"></div>
+
+    <!-- Section 3: You’re Not Alone -->
+    <section class="story-block">
+        <div class="row align-items-center">
+            <div class="col-md-6 text-section">
+                <div class="story-card shadow-sm">
+                    <div class="card-icon bg-danger text-white"><i class="fas fa-heart"></i></div>
+                    <h3 class="card-title">You’re Not Alone</h3>
+                    <blockquote class="quote-box">
+                        <p>"No one else can feel what I feel." <br> And that’s exactly why this has to come from you.</p>
+                    </blockquote>
+                    <p class="card-body-text">MoodMate respects your privacy. You control what’s recorded and when. Unlike paper diaries or third-party observers, this app listens without judgment, and protects what matters most: your mind.</p>
+                </div>
+            </div>
+            <div class="col-md-6 text-center">
+                <img 
+                    src="{{ url_for('static', filename='images/not_alone.png') }}" 
+                    alt="You Are Not Alone" 
+                    class="img-fluid rounded shadow-lg story-image"
+                >
+            </div>
+        </div>
+    </section>
+
+    <div class="custom-separator"><hr class="fade-line"></div>
+
+    <!-- Section 4: Meet MoodMate -->
+    <section class="story-block">
+        <div class="row align-items-center flex-md-row-reverse">
+            <div class="col-md-6 text-section">
+                <div class="story-card shadow-sm">
+                    <div class="card-icon bg-info text-white"><i class="fas fa-hands-helping"></i></div>
+                    <h3 class="card-title">Meet MoodMate — Your Digital Mate</h3>
+                    <p class="card-body-text">MoodMate helps you recognize emotional patterns, journal by voice, and organize your life when your mind feels like a storm. It’s a companion that doesn’t ask questions — it simply listens, tracks, and supports.</p>
+                    <p class="card-highlight">Therapy is vital — but MoodMate makes progress visible, every day, at your own pace.</p>
+                </div>
+            </div>
+            <div class="col-md-6 text-center">
+                <img 
+                    src="{{ url_for('static', filename='images/meet_moodmate.png') }}" 
+                    alt="MoodMate Companion" 
+                    class="img-fluid rounded shadow-lg story-image"
+                >
+            </div>
+        </div>
+    </section>
+
+    <div class="custom-separator"><hr class="fade-line"></div>
+
+
+    <div class="row mt-5 py-5 bg-light rounded">
+        <div class="col-12 text-center mb-4">
+            <h2 class="display-4 fw-bold text-primary feature-heading typing">Our Features</h2>
+            <hr class="mx-auto mt-3 mb-4" style="width: 150px; height: 3px; background-color: #0d6efd; border: none;">
+        </div>
+        <div class="col-md-4 mb-4">
+            <div class="card h-100 feature-card">
+                <div class="card-body text-center">
+                    <h3 class="h4 card-title text-primary fw-bold">Mood Tracking</h3>
+                    <img 
+                        src="{{ url_for('static', filename='icons/mood_tracking.png') }}" 
+                        alt="Mood Tracking" 
+                        class="my-2" 
+                        style="width: 100px; height: 100px;"
+                    >
+                    <p class="card-text">Record your daily mood and see patterns emerge over time with intuitive visualizations.</p>
+                </div>
+            </div>
+        </div>
+        <div class="col-md-4 mb-4">
+            <div class="card h-100 feature-card">
+                <div class="card-body text-center">
+                    <h3 class="h4 card-title text-primary fw-bold">Sentiment Analysis</h3>
+                    <img 
+                        src="{{ url_for('static', filename='icons/sentiment_analysis.png') }}" 
+                        alt="Sentiment Analysis" 
+                        class="my-2" 
+                        style="width: 100px; height: 100px;"
+                    >
+                    <p class="card-text">AI-powered analysis helps identify emotional patterns in your journal entries.</p>
+                </div>
+            </div>
+        </div>
+        <div class="col-md-4 mb-4">
+            <div class="card h-100 feature-card">
+                <div class="card-body text-center">
+                    <h3 class="h4 card-title text-primary fw-bold" >Task Management</h3>
+                    <img 
+                        src="{{ url_for('static', filename='icons/task_management.png') }}" 
+                        alt="Download Entries" 
+                        class="my-2" 
+                        style="width: 100px; height: 100px;"
+                    >
+                    <p class="card-text">Stay organized by managing tasks, achieve dreams, and keeping track of deadlines — all in one place.</p>
+                </div>
+            </div>
+        </div>
+        <div class="col-md-4 mb-4">
+            <div class="card h-100 feature-card">
+                <div class="card-body text-center">
+                    <h3 class="h4 card-title text-primary fw-bold" >Journal by Voice</h3>
+                    <img 
+                        src="{{ url_for('static', filename='icons/voice_note.png') }}" 
+                        alt="Download Entries" 
+                        class="my-2" 
+                        style="width: 100px; height: 100px;"
+                    >
+                    <p class="card-text">Effortlessly dictate your thoughts with voice-to-text, making journaling faster, accessible, and hands-free.</p>
+                </div>
+            </div>
+        </div>
+        <div class="col-md-4 mb-4">
+            <div class="card h-100 feature-card">
+                <div class="card-body text-center">
+                    <h3 class="h4 card-title text-primary fw-bold" >Help Desk for Healing</h3>
+                    <img 
+                        src="{{ url_for('static', filename='icons/help_desk.png') }}" 
+                        alt="Download Entries" 
+                        class="my-2" 
+                        style="width: 100px; height: 100px;"
+                    >
+                    <p class="card-text">Find guidance, relieve stress, and practice self-care at your own pace. Our Help Desk is a safe space to explore resources when you need them.</p>
+                </div>
+            </div>
+        </div>
+        <div class="col-md-4 mb-4">
+            <div class="card h-100 feature-card">
+                <div class="card-body text-center">
+                    <h3 class="h4 card-title text-primary fw-bold" >Download Entries</h3>
+                    <img 
+                        src="{{ url_for('static', filename='icons/download_entries.png') }}" 
+                        alt="Download Entries" 
+                        class="my-2" 
+                        style="width: 100px; height: 100px;"
+                    >
+                    <p class="card-text">Export your journal entries to share with healthcare providers or for personal records.</p>
+                </div>
+            </div>
+        </div>
+    </div>
+{% endblock %}
+
+
+

@@ -1,0 +1,33 @@
+{% extends 'base.html' %}
+{% block title %}All Entries{% endblock %}
+{% block content %}
+    <div class="card p-4">
+        <div class="d-flex justify-content-between align-items-center mb-3">
+            <h2>All Diary Entries</h2>
+            <a href="{{ url_for('diary.add_entry') }}" class="btn btn-lg btn-teal">Add Diary Entry</a>
+        </div>
+        <div class="mb-3">
+            <label for="dateFilter" class="form-label">Filter by Date</label>
+            <input type="date" class="form-control" id="dateFilter" style="max-width: 200px;">
+        </div>
+        {% if entries %}
+            {% for entry in entries %}
+                <div class="card mb-3">
+                    <div class="card-body">
+                        <h5 class="card-title">{{ entry.date }}</h5>
+                        <p class="card-text"><strong>Mood:</strong> {{ entry.mood }}</p>
+                        <p class="card-text"><strong>Sentiment:</strong> {{ entry.sentiment }}</p>
+                        <a href="{{ url_for('diary.view_entry', id=entry.id) }}" class="btn btn-purple">
+                            View
+                        </a>
+                    </div>
+                </div>
+            {% endfor %}
+        {% else %}
+            <p>No entries found.</p>
+        {% endif %}
+    </div>
+{% endblock %}
+{% block scripts %}
+    <script src="{{ url_for('static', filename='js/diary.js') }}"></script>
+{% endblock %}
