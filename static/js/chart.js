@@ -4,12 +4,16 @@ document.addEventListener('DOMContentLoaded', function() {
     
     const labels = entries.map(entry => new Date(entry.date).toLocaleString());
     const moods = entries.map(entry => {
-        if (entry.mood === 'Happy') return 5;
-        if (entry.mood === 'Sad') return 1;
-        if (entry.mood === 'Neutral') return 3;
-        return 3;
+        if (entry.mood === 'Cheerful') return 10;       
+        if (entry.mood === 'Happy') return 8;        
+        if (entry.mood === 'Normal') return 5;    
+        if (entry.mood === 'Sad') return 2;    
+        if (entry.mood === 'Anxious') return 1;     
+    
+        return 3;  // Default for any unknown mood
     });
-    const sentiments = entries.map(entry => entry.sentiment * 5);
+    
+    const sentiments = entries.map(entry => entry.sentiment );
 
     new Chart(ctx, {
         type: 'line',
@@ -34,7 +38,7 @@ document.addEventListener('DOMContentLoaded', function() {
             scales: {
                 y: {
                     beginAtZero: true,
-                    max: 5
+                    max: 11
                 }
             }
         }
